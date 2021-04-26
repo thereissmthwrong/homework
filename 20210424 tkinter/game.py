@@ -8,8 +8,9 @@ def reset_st():
 	played_sc.set(0)
 	won_sc.set(0)
 	lost_sc.set(0)
+	err.set('')
 
-def load_st():
+def load_st(button):
 	import os.path
 	from os import path
 	if path.exists('stats.txt'):
@@ -24,11 +25,15 @@ def load_st():
 				won_sc.set(int(x[1]))
 			elif x[0] == 'Games lost':
 				lost_sc.set(int(x[1]))
+	else:
+		if button:
+			err.set('The save file does not exist.')
 
 def save_st():
 	f = open('stats.txt', 'w', encoding='utf-8')
 	f.write(f'Games played: {str(played_sc.get())}\nGames won: {str(won_sc.get())}\nGames lost: {str(lost_sc.get())}')
 	f.close()
+	err.set('')
 
 def result(pc,user):
 	played_sc.set(played_sc.get()+1)
@@ -72,6 +77,7 @@ def ch_set(ch):
 	elif ch == 'sp':
 		ch_user.set(el[4])
 	result(ch_pc.get(),ch_user.get())
+	err.set('')
 
 root = tk.Tk()
 root.title('Rock Paper Scissors Lizard Spock')
@@ -83,6 +89,8 @@ game = tk.Frame(root, padx=50, pady=35)
 game.grid(row=0, sticky = tk.N + tk.W)
 stats = tk.Frame(root, padx=50)
 stats.grid(row=1, sticky = tk.N + tk.W)
+
+err = tk.StringVar()
 
 #GAME ------------------------------------------------------------------
 
@@ -169,7 +177,7 @@ lost_sc_lbl.grid(row=2, column=1, columnspan = 2, sticky = tk.E)
 save_st_btn = tk.Button(stats, text = 'Save Stats', command = save_st)
 save_st_btn.config(font=("Helvetica", 15))
 
-load_st_btn = tk.Button(stats, text = 'Load Stats', command = load_st)
+load_st_btn = tk.Button(stats, text = 'Load Stats', command = partial(load_st, True))
 load_st_btn.config(font=("Helvetica", 15))
 
 reset_st_btn = tk.Button(stats, text = 'Reset Stats', command = reset_st)
@@ -179,6 +187,11 @@ save_st_btn.grid(row=3, column=0, padx=10, pady=10)
 load_st_btn.grid(row=3, column=1, padx=10, pady=10)
 reset_st_btn.grid(row=3, column=2, padx=10, pady=10)
 
-load_st()
+err_lbl = tk.Label(stats)
+err_lbl.config(textvariable = err, fg = 'red', font=("Helvetica", 10))
+err_lbl.grid(row=4, column=0, columnspan = 3, padx=10, pady=10)
+err.set('')
+
+load_st(False)
 
 root.mainloop()
