@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser(description='Four actions calculator')
 parser.add_argument('x', type=float, nargs='+', help='arguments')
 parser.add_argument('op', choices=['+','-','*','/'], help='operation')
 parser.add_argument('--verbose','-v', action='store_true', help='print result with formula (e.g. 5 5 1 + -v)') # печатать не просто ответ, а выражение целиком
-parser.add_argument('--file','-f', action='store_true', help='copy result in a file (e.g. 5 5 1 + -f "result")') # сбрасываем результат файл
+parser.add_argument('--file','-f', nargs='?', const='Results', type=str, help='copy result in a file (e.g. 5 5 1 + -f "result")') # сбрасываем результат файл
 parser.add_argument('--quiet','-q', action='store_true', help='the result is not shown but can be saved into a file') # вывод на экран не должен происходить (но может сохраняться в файл, если он задан)
 parser.add_argument('--append','-a', action='store_true', help='copy result in a file via appending a new result line') # файл не должен затираться, а вместо этого - дописываться.
 
@@ -46,9 +46,9 @@ elif args.op == '/':
 
 if args.file:
 	if args.append:
-		export_to_file('Results',r,True)
+		export_to_file(args.file,r,True)
 	else:
-		export_to_file('Results',r,False)
+		export_to_file(args.file,r,False)
 	if args.quiet:
 		pass
 	else:
