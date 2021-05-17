@@ -1,0 +1,39 @@
+PS C:\Users\QA\Desktop\Homework\20210515> py -m doctest Doc_test.py
+**********************************************************************
+File "C:\Users\QA\Desktop\Homework\20210515\Doc_test.py", line 22, in Doc_test.Mathematician.filter_leaps
+Failed example:
+    m.filter_leaps([2001, 1884, 1995, 2003, 2020])
+Exception raised:
+    Traceback (most recent call last):
+      File "C:\Users\QA\AppData\Local\Programs\Python\Python38\lib\doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest Doc_test.Mathematician.filter_leaps[0]>", line 1, in <module>
+        m.filter_leaps([2001, 1884, 1995, 2003, 2020])
+**********************************************************************
+File "C:\Users\QA\Desktop\Homework\20210515\Doc_test.py", line 13, in Doc_test.Mathematician.remove_positives
+Failed example:
+    m.remove_positives([26, -11, -8, 13, -90])
+Exception raised:
+    Traceback (most recent call last):
+      File "C:\Users\QA\AppData\Local\Programs\Python\Python38\lib\doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest Doc_test.Mathematician.remove_positives[0]>", line 1, in <module>
+        m.remove_positives([26, -11, -8, 13, -90])
+    NameError: name 'm' is not defined
+**********************************************************************
+File "C:\Users\QA\Desktop\Homework\20210515\Doc_test.py", line 6, in Doc_test.Mathematician.square_nums
+Failed example:
+    m.square_nums([7, 11, 5, 4])
+Exception raised:
+    Traceback (most recent call last):
+      File "C:\Users\QA\AppData\Local\Programs\Python\Python38\lib\doctest.py", line 1336, in __run
+        exec(compile(example.source, filename, "single",
+      File "<doctest Doc_test.Mathematician.square_nums[0]>", line 1, in <module>
+        m.square_nums([7, 11, 5, 4])
+    NameError: name 'm' is not defined
+**********************************************************************
+3 items had failures:
+   1 of   1 in Doc_test.Mathematician.filter_leaps
+   1 of   1 in Doc_test.Mathematician.remove_positives
+   1 of   1 in Doc_test.Mathematician.square_nums
+***Test Failed*** 3 failures.
