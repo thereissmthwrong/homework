@@ -1,0 +1,15 @@
+SELECT * FROM customers;
+SELECT * FROM customers LIMIT 5;
+SELECT FirstName, LastName, Country FROM customers LIMIT 5;
+SELECT FirstName, LastName, Country FROM customers LIMIT 15;
+SELECT FirstName, LastName, Country FROM customers LIMIT 15;
+SELECT Country, LastName, FirstName FROM customers LIMIT 15;
+SELECT FirstName, LastName, Country FROM customers LIMIT 15;
+SELECT CustomerId, FirstName, LastName, Country FROM customers LIMIT 13;
+SELECT CustomerId, FirstName, LastName, Country FROM customers LIMIT 20;
+SELECT CustomerId, FirstName, LastName, Country FROM customers LIMIT 30;
+SELECT CustomerId, FirstName, LastName, Country FROM customers ORDER by FirstName LIMIT 30;
+SELECT CustomerId, FirstName, LastName, Country FROM customers ORDER by Country LIMIT 20;
+SELECT * FROM customers WHERE Country = "India" ORDER BY FirstName;
+SELECT * FROM customers WHERE Country = "Brazil" ORDER BY LastName;
+SELECT * FROM customers WHERE Country = "Brazil" OR Country = "India" ORDER BY CustomerID;
