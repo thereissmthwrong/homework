@@ -1,0 +1,149 @@
+1. Кого наняли в компанию последним по времени?
+Laura Callahan
+2. Кто самый младший сотрудник в компании?
+Jane Peacock
+3. Выведите список клиентов и менеджеров, которые их обслуживают.
+ FirstName │   LastName   │    Manager    │
+├───────────┼──────────────┼───────────────┤
+│ Luís      │ Gonçalves    │ Jane Peacock  │
+│ Leonie    │ Köhler       │ Steve Johnson │
+│ François  │ Tremblay     │ Jane Peacock  │
+│ Bjorn     │ Hansen       │ Margaret Park │
+│ Frantisek │ Wichterlová  │ Margaret Park │
+│ Helena    │ Holy         │ Steve Johnson │
+│ Astrid    │ Gruber       │ Steve Johnson │
+│ Daan      │ Peeters      │ Margaret Park │
+│ Kara      │ Nielsen      │ Margaret Park │
+│ Eduardo   │ Martins      │ Margaret Park │
+│ Alexandre │ Rocha        │ Steve Johnson │
+│ Roberto   │ Almeida      │ Jane Peacock  │
+│ Fernanda  │ Ramos        │ Margaret Park │
+│ Mark      │ Philips      │ Steve Johnson │
+│ Jennifer  │ Peterson     │ Jane Peacock  │
+│ Frank     │ Harris       │ Margaret Park │
+│ Jack      │ Smith        │ Steve Johnson │
+│ Michelle  │ Brooks       │ Jane Peacock  │
+│ Tim       │ Goyer        │ Jane Peacock  │
+│ Dan       │ Miller       │ Margaret Park │
+│ Kathy     │ Chase        │ Steve Johnson │
+│ Heather   │ Leacock      │ Margaret Park │
+│ John      │ Gordon       │ Margaret Park │
+│ Frank     │ Ralston      │ Jane Peacock  │
+│ Victor    │ Stevens      │ Steve Johnson │
+│ Richard   │ Cunningham   │ Margaret Park │
+│ Patrick   │ Gray         │ Margaret Park │
+│ Julia     │ Barnett      │ Steve Johnson │
+│ Robert    │ Brown        │ Jane Peacock  │
+│ Edward    │ Francis      │ Jane Peacock  │
+│ Martha    │ Silk         │ Steve Johnson │
+│ Aaron     │ Mitchell     │ Margaret Park │
+│ Ellie     │ Sullivan     │ Jane Peacock  │
+│ Joao      │ Fernandes    │ Margaret Park │
+│ Madalena  │ Sampaio      │ Margaret Park │
+│ Hannah    │ Schneider    │ Steve Johnson │
+│ Fynn      │ Zimmermann   │ Jane Peacock  │
+│ Niklas    │ Schröder     │ Jane Peacock  │
+│ Camille   │ Bernard      │ Margaret Park │
+│ Dominique │ Lefebvre     │ Margaret Park │
+│ Marc      │ Dubois       │ Steve Johnson │
+│ Wyatt     │ Girard       │ Jane Peacock  │
+│ Isabelle  │ Mercier      │ Jane Peacock  │
+│ Terhi     │ Hämäläinen   │ Jane Peacock  │
+│ Ladislav  │ Kovács       │ Jane Peacock  │
+│ Hugh      │ O'Reilly     │ Jane Peacock  │
+│ Lucas     │ Mancini      │ Steve Johnson │
+│ Johannes  │ Van der Berg │ Steve Johnson │
+│ Stanislaw │ Wójcik       │ Margaret Park │
+│ Enrique   │ Muñoz        │ Steve Johnson │
+│ Joakim    │ Johansson    │ Steve Johnson │
+│ Emma      │ Jones        │ Jane Peacock  │
+│ Phil      │ Hughes       │ Jane Peacock  │
+│ Steve     │ Murray       │ Steve Johnson │
+│ Mark      │ Taylor       │ Margaret Park │
+│ Diego     │ Gutiérrez    │ Margaret Park │
+│ Luis      │ Rojas        │ Steve Johnson │
+│ Manoj     │ Pareek       │ Jane Peacock  │
+│ Puja      │ Srivastava   │ Jane Peacock  │
+└───────────┴──────────────┴───────────────┘
+4. Есть ли клиенты, которых никто не обслуживает?
+Yes
+('Kara Nielsen', None)
+('Eduardo Martins', None)
+('Alexandre Rocha', None)
+('Roberto Almeida', None)
+('Fernanda Ramos', None)
+('Mark Philips', None)
+('Jennifer Peterson', None)
+('Frank Harris', None)
+('Jack Smith', None)
+('Michelle Brooks', None)
+('Tim Goyer', None)
+('Dan Miller', None)
+('Kathy Chase', None)
+('Heather Leacock', None)
+('John Gordon', None)
+('Frank Ralston', None)
+('Victor Stevens', None)
+('Richard Cunningham', None)
+('Patrick Gray', None)
+('Julia Barnett', None)
+('Robert Brown', None)
+('Edward Francis', None)
+('Martha Silk', None)
+('Aaron Mitchell', None)
+('Ellie Sullivan', None)
+('João Fernandes', None)
+('Madalena Sampaio', None)
+('Hannah Schneider', None)
+('Fynn Zimmermann', None)
+('Niklas Schröder', None)
+('Camille Bernard', None)
+('Dominique Lefebvre', None)
+('Marc Dubois', None)
+('Wyatt Girard', None)
+('Isabelle Mercier', None)
+('Terhi Hämäläinen', None)
+('Ladislav Kovács', None)
+("Hugh O'Reilly", None)
+('Lucas Mancini', None)
+('Johannes Van der Berg', None)
+('Stanisław Wójcik', None)
+('Enrique Muñoz', None)
+('Joakim Johansson', None)
+('Emma Jones', None)
+('Phil Hughes', None)
+('Steve Murray', None)
+('Mark Taylor', None)
+('Diego Gutiérrez', None)
+('Luis Rojas', None)
+('Manoj Pareek', None)
+('Puja Srivastava', None)
+5. Есть ли менеджеры без клиентов?
+Yes
+┌──────────────────┐
+│     Manager      │
+├──────────────────┤
+│ Andrew Adams     │
+│ Nancy Edwards    │
+│ Michael Mitchell │
+│ Robert King      │
+│ Laura Callahan   │
+└──────────────────┘
+* Попробуйте самостоятельно разобраться с GROUP BY:
+* 1. У какого исполнителя больше всего альбомов?
+Iron Maiden(21)
+* 2. TOP-10 исполнителей по количеству альбомов?
+┌─────────────────┬───────────┐
+│      Name       │ count_alb │
+├─────────────────┼───────────┤
+│ Iron Maiden     │ 21        │
+│ Led Zeppelin    │ 14        │
+│ Deep Purple     │ 11        │
+│ Metallica       │ 10        │
+│ U2              │ 10        │
+│ Ozzy Osbourne   │ 6         │
+│ Pearl Jam       │ 5         │
+│ Various Artists │ 4         │
+│ Faith No More   │ 4         │
+│ Foo Fighters    │ 4         │
+└─────────────────┴───────────┘
