@@ -1,0 +1,10 @@
+<html>
+    <head> <style> </style> </head>
+    <body>
+        <ol>
+			% for i in list_of_files:
+				<li> <a href="${i}" >${i}</a> </li>
+			%endfor
+		</ol>
+    </body>
+    </html>
